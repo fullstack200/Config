@@ -1,0 +1,148 @@
+:root {
+  --bgcolor: #1E90FF;
+  --bgcolor2: rgb(0, 15, 18);
+  --textcolor: white;
+}
+
+.main-content {
+  position: relative;
+  height: 100%;
+
+}
+
+#myVideo {
+  width: 100%;
+  filter: brightness(30%);
+}
+
+
+.one-liner {
+  color: var(--textcolor);
+  font-weight: 800;
+  font-size: 5em;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.explore {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  width: 200px;
+  background-color: var(--bgcolor);
+  border: none;
+  color: var(--textcolor);
+  font-size: 25px;
+
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.explore span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.explore span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.explore:hover span {
+  padding-right: 25px;
+}
+
+.explore:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.explore a {
+  text-decoration: none;
+  color: var(--textcolor);
+}
+
+.footer {
+  background-color: var(--bgcolor2);
+  color: var(--textcolor);
+  margin: 0;
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  line-height: 1.6;
+  position: absolute;
+  top: 760px;
+
+}
+
+.footer h1 {
+  padding: 100px 0 0 0;
+}
+
+.footer p {
+  padding: 0 0 100px 0;
+}
+
+
+/*-------------Mobile screen--------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px) {
+
+  #myVideo {
+    width: 480px;
+    margin: 0;
+    height: 500px;
+    object-fit: cover;
+    z-index: -100;
+  }
+
+  .one-liner {
+    font-weight: 800;
+    font-size: 2em;
+    top: 35%;
+    left: 50%;
+
+  }
+
+  .explore {
+    height: 40px;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 120px;
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .footer {
+    height: 370px;
+    width: 480px;
+    position: absolute;
+    top: 500px;
+  }
+
+  .footer p {
+    text-align: center;
+    padding: 0 30px 30px 30px;
+
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link rel="stylesheet" href="{% static 'CSS\typstud.css' %}">
+
+  <style>
+    .bg-image {
+      background-image: url("{% static 'media/Best-School-Laptop-2020-920x613.jpg' %}");
+    }
+  </style>
+   {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+<body>
+  <div class="bg-image"></div><br>
+  <div class="bg-text">
+    <h1>Student's Zone</h1><br>
+    <p>
+      The best student laptops are an essential part of education, allowing folk to tune into lectures and lessons
+      remotely even if they can't physically attend, and providing ways for young people to stay connected with each
+      other and family. The options, however, are as varied as the courses that folks who use them will be studying, so
+      it's no surprise that it's easy to feel overwhelmed by all the choices available.
+    </p>
+    <a href="#"><button type="button" class="explore"><span> Click to explore! </span></button></a>
+  </div>
+</body>
+{% endblock content %}
+</html>

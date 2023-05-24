@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link rel="stylesheet" href="{% static 'CSS\typpro.css' %}">
+
+  <style>
+    .bg-image {
+      background-image: url("{% static 'media/1_2db8F59LEiO6VfX0fJDpgA.jpeg' %}");
+    }
+  </style>
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body>
+  <div class="bg-image"></div><br>
+  <div class="bg-text">
+    <h1>Programmer's Zone</h1><br>
+    <p>
+      If you're looking for the best laptops for programming, then you've come to the right place. On this page, you'll
+      find a range of great devices that will making coding a joy.
+      These days, many of us are splitting our work lives between the office and home, and that means laptops have
+      become more essential than ever before, allowing you to easily work pretty much anywhere.
+      While you don't always need a powerful laptop for coding on, investing in a laptop with cutting-edge components
+      can still be very beneficial. The more powerful the laptop, the faster it'll be at compiling and testing code, and
+      this can drastically speed up your workflow.
+      That means less waiting around, and more time taking on other projects.
+    </p>
+    <a href="#"><button type="button" class="explore"><span>Click to explore! </span></button></a>
+  </div>
+
+</body>
+{% endblock content %}
+
+</html>

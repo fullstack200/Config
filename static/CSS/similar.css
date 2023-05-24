@@ -1,0 +1,382 @@
+:root {
+    --bgcolor: #1E90FF;
+    --bgcolor2: rgb(0, 15, 18);
+    --textcolor: white;
+    --font: Montserrat;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.modal::-webkit-scrollbar {
+    height: 0;
+
+}
+
+html,
+body {
+    font-family: var(--font);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/*Horizontal-menu styling*/
+.horizontal-menu {
+    position: sticky;
+    height: 50px;
+    width: 100%;
+    background-color: var(--bgcolor);
+    display: flex;
+}
+
+.horizontal-menu i {
+    position: absolute;
+    top: 15px;
+    cursor: pointer;
+    color: var(--textcolor);
+}
+
+.horizontal-menu p{
+    width:100%;
+    color:white;
+    margin-top:12px;
+    margin-right: 55px;
+    float:right;
+}
+
+#sidebar,
+#search,
+#star,
+#user {
+    position: absolute;
+    top: 15px;
+}
+
+#sidebar {
+    left: 15px;
+}
+
+#logo {
+    display: inline-block;
+    width: 15%;
+    position: relative;
+    bottom: 15px;
+    left: 330px;
+}
+
+#searchbox {
+    border: none;
+    height: 35px;
+    width: 400px;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 6px;
+    left: 450px;
+    padding: 12px 12px;
+}
+
+#search {
+    color: var(--bgcolor);
+    left: 820px;
+}
+
+#star {
+    right: 50px;
+}
+
+#user {
+    right: 15px;
+}
+
+.horizontal-menu h6{
+    width:100%;
+    color:white;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.horizontal-menu input[type=text] {
+    border: none;
+    height: 35px;
+    width: 400px;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 6px;
+    left: 450px;
+    padding: 12px 21px;
+}
+
+.sidepanel {
+    font-family: var(--font);
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.account {
+    font-family: Montserrat;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.account a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    margin-left: 80px;
+    cursor:pointer;
+}
+
+.account a:hover {
+    color: #f1f1f1;
+}
+
+.account .closebtna {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    font-size: 36px;
+    margin-left: 0px;
+}
+
+/*------Login and Signup--------------------------------------------------------------------------------------------------------------------------------------*/
+
+.container input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+
+}
+
+button {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 47%;
+    font-family: var(--font);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    color: var(--textcolor);
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 0px 0;
+    position: relative;
+}
+
+img.avatar {
+    position: relative;
+    top: 10px;
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 15px;
+    margin-bottom: 0;
+    width: 100%;
+    height:100%;
+}
+
+.container button{
+    margin-top:20px;
+    display: inline;
+}
+
+span.psw {
+    padding-top: 16px;
+    float:right;
+    margin-right: 10px;
+}
+
+.modal {
+    font-family: var(--font);
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #111;
+    padding-top: 60px;
+}
+
+.modal-content {
+    color: var(--textcolor);
+    background-color: var(--bgcolor);
+    margin: 5% auto 15% auto;
+    width: 41%;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    color: var(--textcolor);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.animate {
+    animation: animatezoom 0.6s
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+
+
+.copy-rights {
+    height: 52px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 1107px;
+    margin-top: 10px;
+    color: var(--textcolor);
+}
+
+.copy-rights p {
+    padding: 15px 0 10px 10px;
+}
+
+/********Style for mobile screen**********************************************************************/
+@media screen and (max-width:480px) {
+   
+
+    .horizontal-menu i {
+        font-size: large;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #sidebar {
+        left: 15px;
+    }
+
+    #logo {
+        width: 35%;
+        left: 20px;
+        bottom: 17px;
+    }
+
+    #searchbox {
+        width: 250px;
+        height: 30px;
+        top: 10px;
+        left: 140px;
+    }
+
+    #search {
+        color: var(--bgcolor);
+        left: 360px;
+    }
+
+    #star {
+        right: 45px;
+    }
+
+    #user {
+        right: 15px;
+    }
+
+  
+
+
+    .copy-rights {
+        height: 65px;
+        width: 480px;
+        top: 860px;
+    }
+
+    .copy-rights p {
+        padding: 18px 0 10px 10px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link rel="stylesheet" href="{% static 'CSS\typgph.css' %}">
+
+  <style>
+    .bg-image {
+      background-image: url("{% static 'media/Best-Laptops-for-Artists-1024x683.jpg' %}");
+    }
+  </style>
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body>
+  <div class="bg-image"></div><br>
+  <div class="bg-text">
+    <h1>Designer's Zone</h1><br>
+    <p>
+      If you're on the hunt for the best laptops for graphic design in 2022, then we can help. Modern laptops are more
+      powerful than ever, and that means they are essential tools for graphic designers who don't want to be stuck at a
+      desk all day.
+      Previously, you'd have needed a desktop PC for intensive graphic design work, but these days laptops often offer
+      similar level of performance, while also being easily portable, which is useful if you travel a lot for work.
+    </p>
+    <a href="#"><button type="button" class="explore"><span> Click to explore! </span></button></a>
+  </div>
+</body>
+{% endblock content %}
+
+</html>

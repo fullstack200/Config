@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block extrahead %}
+    <!-- External stylesheet link -->
+    <link href="{% static './CSS/similar.css' %}" rel="stylesheet">
+    {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body style="background-color: rgb(0, 15, 18);">
+    <div style="background-color: rgb(0, 15, 18);">
+        <form class="modal-content animate" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal">&times;</span>
+                <img src="{% static './media/user-m.png' %}" alt="Avatar" class="avatar"><br><br>
+                <h1 style="margin-top:30px"><b>SIGN UP</b></h1>
+            </div>
+
+            <div class="container">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+
+            <div class="container" style="background-color:rgb(0, 15, 18); height:135px">
+                <p>Already have an account? <a href="#" onclick="login()"
+                        style="cursor:pointer; text-decoration:underline">Login</a>
+                </p>
+                <button style="background-color:green;" type="submit">Sign Up</button>
+                <button style="background-color:red; float:right;"
+                    onclick="document.getElementById('id01').style.display='none'" type="submit">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock content %}
+
+</html>

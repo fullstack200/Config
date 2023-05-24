@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link rel="stylesheet" href="{% static 'CSS\typbus.css' %}">
+
+  <style>
+    .bg-image {
+      background-image: url("{% static 'media/6a019b00aa8013970c026be417fde6200d-800wi.jpg' %}");
+    }
+  </style>
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body>
+  <div class="bg-image"></div><br>
+  <div class="bg-text">
+    <h1>Professional's Zone</h1><br>
+    <p>
+      Picking the best business laptops for your firm can be one of the most important investments you make. These handy
+      devices can help you or your employees remain productive, whether you're working from an office, or working from
+      home (like many of us still are).
+    </p>
+    <a href="#"><button type="button" class="explore"><span> Click to explore! </a></span></button></a>
+  </div>
+</body>
+{% endblock content %}
+</html>

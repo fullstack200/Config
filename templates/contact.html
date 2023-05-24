@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link href="{% static './CSS/contact.css' %}" rel="stylesheet">
+  {% endblock %}
+</head>
+
+{% block content %}
+
+<body>
+  <section class="getintouch">
+    <i class="far fa-handshake"></i>
+    <h1>Get in touch with me on </h1>
+  </section>
+
+  <section>
+    <table class="center">
+      <tr>
+        <td><i class="far fa-envelope"></i></td>
+        <td><span>-</span></td>
+        <td>fullstackdeveloper404@gmail.com</td>
+      </tr>
+      <tr>
+        <td><i class="fab fa-linkedin"></i></td>
+        <td><span>-</span></td>
+        <td>linkedin.com/in/fahad-ahmed-bab2ba1a0</td>
+      </tr>
+      <tr>
+        <td><i class="fab fa-github"></i></td>
+        <td><span>-</span></td>
+        <td>fullstack404</td>
+      </tr>
+      <tr>
+        <td><i class="fab fa-instagram"></i></td>
+        <td><span>-</span></td>
+        <td>fahad_ahmed.05</td>
+      </tr>
+    </table>
+  </section>
+</body>
+
+{% endblock content %}
+
+</html>

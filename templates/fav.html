@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link rel="stylesheet" href="{% static './CSS/fav.css' %}">
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+<body id="content">
+  <!----------------------------------------------------------------------------------------------------------------------------------------->
+  <section>
+    <div class="favorites" id="favorites">
+      <div id="emp">
+        <h1>Your favourites section is empty....<br><img src="media\Icons\box.png" alt=""
+            style="height:50px;width:50px;"><br>Add to view</h1>
+      </div>
+      <div id="fav1" class="favourites" id="fav1">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav1')"></i>
+      </div>
+
+      <div id="fav2" class="favourites" id="fav2">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav2')"></i>
+      </div>
+
+      <div class="favourites" id="fav3">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav3')"></i>
+      </div>
+
+      <div class="favourites" id="fav4">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav4')"></i>
+      </div>
+
+      <div class="favourites" id="fav5">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav5')"></i>
+      </div>
+
+      <div class="favourites" id="fav6">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav6')"></i>
+      </div>
+
+      <div class="favourites" id="fav7">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav7')"></i>
+      </div>
+
+      <div class="favourites" id="fav8">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav8')"></i>
+      </div>
+
+      <div class="favourites" id="fav9">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav9')"></i>
+      </div>
+
+      <div class="favourites" id="fav10">
+        <img src="" alt="">
+        <h6></h6>
+        <p></p>
+        <p></p>
+        <p></p>
+        <i class="fa-solid fa-trash-can" onclick="rem('fav10')"></i>
+      </div>
+    </div>
+  </section>
+  <script>
+
+    function rem(n) {
+      document.getElementById(n).remove();
+      console.log(document.getElementsByClassName("favourites").length);
+      if (document.getElementsByClassName("favourites").length == 0) {
+        document.getElementById("emp").style.display = "block";
+        document.getElementById("copy").style = "top:30px"
+      }
+    }
+
+    function newElement() {
+      const count = document.getElementsByClassName("favourites").length;
+      const id = "fav" + (count + 1);
+      const div = document.createElement("div");
+      div.setAttribute("class", "favourites");
+      div.setAttribute("id", id);
+      document.getElementById("favorites").appendChild(div);
+
+      const img = document.createElement("img");
+      img.setAttribute("src", "61Y30DpqRVL._SL1500_.jpg");
+      document.getElementById(id).appendChild(img);
+
+      const head = document.createElement("h6");
+      head.innerHTML = "Apple MAC BOOK PRO";
+      document.getElementById(id).appendChild(head);
+
+      const p1 = document.createElement("p");
+      p1.innerHTML = "";
+      document.getElementById(id).appendChild(p1);
+
+      const p2 = document.createElement("p");
+      p2.innerHTML = "";
+      document.getElementById(id).appendChild(p2);
+
+      const p3 = document.createElement("p");
+      p3.innerHTML = "";
+      document.getElementById(id).appendChild(p3);
+
+      const icon = document.createElement("i");
+      icon.setAttribute("class", "fa-solid fa-trash-can");
+      icon.setAttribute("onclick", "rem('" + id + "')")
+      document.getElementById(id).appendChild(icon);
+
+    }
+  </script>
+</body>
+{% endblock content %}
+</html>
