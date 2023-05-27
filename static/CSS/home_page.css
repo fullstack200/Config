@@ -7,12 +7,14 @@
 .main-content {
   position: relative;
   height: 100%;
+  margin:0;
 
 }
 
 #myVideo {
   width: 100%;
   filter: brightness(30%);
+ margin:0;
 }
 
 
@@ -43,7 +45,6 @@
   border: none;
   color: var(--textcolor);
   font-size: 25px;
-
   padding: 20px;
   width: 200px;
   transition: all 0.5s;
@@ -89,8 +90,6 @@
   width: 100%;
   text-align: center;
   line-height: 1.6;
-  position: absolute;
-  top: 760px;
 
 }
 

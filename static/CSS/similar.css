@@ -167,7 +167,7 @@ body {
     font-size: 25px;
     display: block;
     transition: 0.3s;
-    margin-left: 80px;
+    margin-left: 50px;
     cursor:pointer;
 }
 
@@ -315,9 +315,6 @@ span.psw {
     height: 52px;
     width: 100%;
     background-color: black;
-    position: absolute;
-    top: 1107px;
-    margin-top: 10px;
     color: var(--textcolor);
 }
 

@@ -44,6 +44,7 @@
       <a style="color: #818181;" href="javascript:void(0)" class="closebtna" onclick="closeNava()">×</a>
       {% if user.is_authenticated %}
       <a href="{% url 'logout' %}" style="color: #818181;" id="log">Logout</a>
+      <a href="{% url 'password_change' %}" style="color:#818181;">Change Password</a>
       {% else %}
       <a href="{% url 'login' %}" style="color: #818181;" id="log">Login</a>
       {% endif %}
@@ -71,7 +72,7 @@
 
   <section>
     <div class="copy-rights">
-      <p>&copy; 2022 Fahad Ahmed.</p>
+      <p>&copy; 2023 Fahad Ahmed.</p>
     </div>
   </section>
 

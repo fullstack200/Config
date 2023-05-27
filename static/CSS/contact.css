@@ -36,10 +36,9 @@ td {
   padding: 10px;
 }
 
-.copy-rights {
-  top: 700px;
+.copy-rights{
+  margin-top:1250px;
 }
-
 /**********Mobile screen*********************************************************************************************/
 
 @media screen and (max-width:480px) {
