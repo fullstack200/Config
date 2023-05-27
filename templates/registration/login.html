@@ -8,9 +8,6 @@
   <!-- External stylesheet link -->
   <link href="{% static './CSS/similar.css' %}" rel="stylesheet">
   {% endblock %}
-
-
-
 </head>
 <!---------------------------------------------------------------------------------------------------------------------------------------->
 {% block content %}
@@ -34,9 +31,8 @@
             style="cursor:pointer; text-decoration:underline;">Signup</a>
         </p>
         <button style="background-color:green; margin-right: 15px;" type="submit">Login</button>
-        <button style="background-color:red; margin-left:10px; float:right" type="button"
-          onclick="document.getElementById('id02').style.display='none'"><a
-            style="text-decoration:none;width:100%;color:white" href="{% url 'home' %}">Cancel</a></button>
+        <a style="text-decoration:none;width:100%;color:white" href="{% url 'home' %}"><button style="background-color:red; margin-left:10px; float:right" type="button"
+          onclick="document.getElementById('id02').style.display='none'">Cancel</button></a>
 
       </div>
     </form>
