@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+    'laptops.apps.LaptopsConfig',
 ]
 
 MIDDLEWARE = [
@@ -134,8 +135,7 @@ LOGOUT_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = "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"
+
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "fullstackdeveloper404@gmail.com"

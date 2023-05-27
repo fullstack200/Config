@@ -27,7 +27,7 @@
       </div>
       <div class="container" style="background-color:rgb(0, 15, 18);">
         <span class="psw">Forgot <a href="{% url 'password_reset' %}">password?</a></span>
-        <p style="margin-left: 5px;" id="signup">New here? <a href="#" onclick="signup()"
+        <p style="margin-left: 5px;" id="signup">New here? <a href="{% url 'signup' %}" onclick="signup()"
             style="cursor:pointer; text-decoration:underline;">Signup</a>
         </p>
         <button style="background-color:green; margin-right: 15px;" type="submit">Login</button>
