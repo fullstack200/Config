@@ -27,7 +27,12 @@
       that getting a grip on all that PC jargon can be exhausting. But we're here to help you cut through the clutter
       with a list of the ten best laptops for games on the market right now.
     </p>
-    <a href="#"><button type="button" class="explore"><span> Click to explore! </a></span></button><br>
+    {% for i in game %}
+    {% if forloop.first %}
+    <a href="{% url 'gameView' i.id %}"><button type="button" class="explore"><span>Click to explore!
+        </span></button></a>
+    {%endif%}
+    {% endfor %}
   </div>
 
 </body>

@@ -229,8 +229,8 @@
 
     <!--Multiple Images Display section------------------------------------------------------------------------------------------------------->
     <div class="multi-imgs" id="multi-imgs">
-      {% for i in laptops %}
-      <a href="{% url 'view' i.pk %}"><img class="demo" id="demo" src="{{ i.img1.url }}"  onclick="currentSlide(1)"></a>
+      {% for i in gph %}
+      <a href="{% url 'gphView' i.id %}"><img class="demo" id="demo" src="{{ i.img1.url }}"  onclick="currentSlide(1)"></a>
       {% endfor %}
     </div>
 
@@ -243,7 +243,7 @@
     <!--Information section------------------------------------------------------------------------------------------------------------------->
     <div class="info">
       <h5 style="text-align:center;"><span
-          class="name">{{laptop.laptopID}}.&nbsp;{{laptop.brand}}&nbsp;{{laptop.model}}</span></h5><br><br>
+          class="name">{{laptop.brand}}&nbsp;{{laptop.model}}</span></h5><br><br>
       <div class="info1">
         <h4>General Info</h4>
         <table style="width:320px">
@@ -306,7 +306,7 @@
             <td>
               <li><img src="{% static 'media\hdd.png' %}"> Storage :</li>
             </td>
-            <td>{{laptop.storageMemory}} GB {{laptop.storageType}}</td>
+            <td>{{laptop.storageMemory}} {{laptop.storageType}}</td>
           </tr>
           <tr>
             <td>

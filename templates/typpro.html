@@ -32,8 +32,15 @@
       this can drastically speed up your workflow.
       That means less waiting around, and more time taking on other projects.
     </p>
-    <a href="#"><button type="button" class="explore"><span>Click to explore! </span></button></a>
+    {% for i in prog %}
+    {% if forloop.first %}
+    <a href="{% url 'progView' i.id %}"><button type="button" class="explore"><span>Click to explore!
+        </span></button></a>
+    {%endif%}
+    {% endfor %}
   </div>
+
+
 
 </body>
 {% endblock content %}

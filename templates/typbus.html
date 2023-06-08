@@ -27,7 +27,12 @@
       devices can help you or your employees remain productive, whether you're working from an office, or working from
       home (like many of us still are).
     </p>
-    <a href="#"><button type="button" class="explore"><span> Click to explore! </a></span></button></a>
+    {% for i in busn %}
+    {% if forloop.first %}
+    <a href="{% url 'busnView' i.id %}"><button type="button" class="explore"><span>Click to explore!
+        </span></button></a>
+    {%endif%}
+    {% endfor %}
   </div>
 </body>
 {% endblock content %}

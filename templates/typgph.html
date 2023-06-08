@@ -29,7 +29,12 @@
       Previously, you'd have needed a desktop PC for intensive graphic design work, but these days laptops often offer
       similar level of performance, while also being easily portable, which is useful if you travel a lot for work.
     </p>
-    <a href="#"><button type="button" class="explore"><span> Click to explore! </span></button></a>
+    {% for i in gph %}
+    {% if forloop.first %}
+    <a href="{% url 'gphView' i.id %}"><button type="button" class="explore"><span>Click to explore!
+        </span></button></a>
+    {%endif%}
+    {% endfor %}
   </div>
 </body>
 {% endblock content %}
