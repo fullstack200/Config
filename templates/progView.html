@@ -193,9 +193,7 @@
       </div>
     </div>
 
-    <a class="prev" onclick="plusSlides(-1);slide(-100)"><i class="fa-solid fa-chevron-left"></i></a>
-    <a class="next" onclick="plusSlides(1);slide(100)"><i class="fa-solid fa-chevron-right"></i></a>
-
+    
     <div class="tooltip-fav">
       <i class="fas fa-star" id="star2" onclick="addToFav()" style="color:white;"></i>
       <span class="tooltiptext" id="tooltiptext">Add to favourites</span>
@@ -231,6 +229,7 @@
     <div class="multi-imgs" id="multi-imgs">
       {% for i in prog %}
       <a href="{% url 'progView' i.id %}"><img class="demo" id="demo" src="{{ i.img1.url }}"  onclick="currentSlide(1)"></a>
+      
       {% endfor %}
     </div>
 

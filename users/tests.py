@@ -1,6 +1,7 @@
 from django.test import SimpleTestCase
 
 class SimpleTests(SimpleTestCase):
+    databases = '__all__'
     def test_home_page_status_code(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
@@ -36,4 +37,5 @@ class SimpleTests(SimpleTestCase):
     def test_typstud_page_status_code(self):
         response = self.client.get('/category/typstud/')
         self.assertEqual(response.status_code, 200)
+    
     

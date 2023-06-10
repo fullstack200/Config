@@ -6,7 +6,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def progMenu(request):
-    myData = Laptop.objects.filter(typ='Programming')
+    myData = Laptop.objects.filter(typ='Programming').values()
     template = loader.get_template('typpro.html')
     context = {
         'prog': myData,
@@ -38,7 +38,7 @@ def gphMenu(request):
     return HttpResponse(template.render(context, request))
 
 def studMenu(request):
-    myData = Laptop.objects.filter(typ='School')
+    myData = Laptop.objects.filter(typ='Student')
     template = loader.get_template('typstud.html')
     context = {
         'stud': myData,
