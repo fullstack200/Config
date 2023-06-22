@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.conf import settings
 # Create your models here.
 
 class Laptop(models.Model):
@@ -33,7 +34,8 @@ class Laptop(models.Model):
     img4 = models.ImageField(null = True, blank = True,upload_to="upload/")
     img5 = models.ImageField(null = True, blank = True,upload_to="upload/")
     img6 = models.ImageField(null = True, blank = True,upload_to="upload/")
-
+    # Importing the auth user model from settings.py file to link 
+    user_favourite = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="user_favourites", blank=True)
     def __str__(self):
         return self.brand
 

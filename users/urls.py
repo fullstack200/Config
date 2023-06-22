@@ -13,4 +13,8 @@ urlpatterns = [
     path('category/typgame/', gameMenu, name='typgame'),
     path('category/typgph/', gphMenu, name='typgph'),
     path('category/typstud/', studMenu, name='typstud'),
+    # wishlist URL
+    path('favourites',favouritesView,name='favouritesView'),
+    path('favourites_add/<int:id>',user_favourite, name="favourites"),
+    path('search_result',search.as_view(),name="search_result"),
 ]

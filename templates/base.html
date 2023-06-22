@@ -54,15 +54,17 @@
     <div class="horizontal-menu">
       <i class="fa-solid fa-bars openbtn" id="sidebar" onclick="openNav()"></i>
       <a href="{% url 'home' %}"><img id="logo" src="{% static './media/CONFIGURE.png' %}" alt=""></a>
-      <input type="text" id="searchbox" placeholder=" Search Laptops...">
-      <i id="search" class="fa-solid fa-magnifying-glass"></i>
+      <form method="GET" action="{% url 'search_result' %}">
+        <input type="text" name="searchlaptop" id="searchbox" placeholder=" Search Laptops...">
+        <i id="search" class="fa-solid fa-magnifying-glass"></i>
+      </form>
       {% if user.is_authenticated %}
       <h6>Hi, {{ user.username }}</h6>
       {% else %}
       <p style=" margin-right: 55px;">Login to continue</p>
       {% endif %}
 
-      <a href=""><i id="star" class="fas fa-star"></i></a>
+      <a href="{% url 'favouritesView' %}"><i id="star" class="fas fa-star"></i></a>
       <i class="fa-solid fa-user openbtn" id="user" onclick="openNava()"></i>
     </div>
   </section>

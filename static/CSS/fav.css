@@ -32,6 +32,11 @@ body {
   flex-wrap: wrap;
 }
 
+.favorites a {
+  color:white;
+  text-decoration: none;
+}
+
 #emp{
   display:none;
   color:var(--textcolor);
@@ -40,13 +45,14 @@ body {
   margin: 170px auto 78px auto;
 }
 
-.favorites h6 {
+.favorites h4 {
   font-weight: bold;
   padding-top: 10px;
 }
 
 .favorites p {
   margin: 0;
+  font-size: 0.8rem;
 }
 
 .favorites button {
@@ -68,6 +74,7 @@ body {
 .favorites i {
   margin-top: 10px;
   font-size: 20px;
+  color:white;
 }
 
 .copy-rights {

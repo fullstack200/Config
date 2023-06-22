@@ -192,13 +192,15 @@
         <img src="{{ laptop.img1.url }}">
       </div>
     </div>
-
-    <a class="prev" onclick="plusSlides(-1);slide(-100)"><i class="fa-solid fa-chevron-left"></i></a>
-    <a class="next" onclick="plusSlides(1);slide(100)"><i class="fa-solid fa-chevron-right"></i></a>
-
+    
     <div class="tooltip-fav">
-      <i class="fas fa-star" id="star2" onclick="addToFav()" style="color:white;"></i>
+      {% if favlaptop %}
+      <a href="{% url 'favourites' laptop.id %}"><i class="fas fa-star" id="star2" style='color:yellow' onclick="addToFav()"></i></a>
+      <span class="tooltiptext" id="tooltiptext">Remove from favourites</span>
+      {% else %}
+      <a href="{% url 'favourites' laptop.id %}"><i class="fas fa-star" id="star2" onclick="addToFav()" style="color:white;"></i></a>
       <span class="tooltiptext" id="tooltiptext">Add to favourites</span>
+      {% endif %}
     </div>
 
     <div class="tooltip-fil">
