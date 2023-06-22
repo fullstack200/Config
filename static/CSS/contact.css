@@ -1,0 +1,78 @@
+:root {
+  --bgcolor: #1E90FF;
+  --color: white;
+  --bgcolor2: rgb(0, 15, 18);
+}
+
+body {
+  background-color: var(--bgcolor2);
+}
+
+.getintouch i {
+  color: var(--textcolor);
+  font-size: 4em;
+  margin-left: 600px;
+  margin-top: 150px;
+}
+
+h1 {
+  color: var(--textcolor);
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr,
+td {
+  text-align: justify;
+  color: var(--textcolor);
+  font-size: 1em;
+  padding: 10px;
+}
+
+.copy-rights{
+  margin-top:1250px;
+}
+/**********Mobile screen*********************************************************************************************/
+
+@media screen and (max-width:480px) {
+
+  .getintouch i {
+    font-size: 4em;
+    position: absolute;
+    top: 50px;
+    right: 130px;
+  }
+
+  h1 {
+    color: var(--textcolor);
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 400;
+    margin-top: 250px;
+    margin-bottom: 30px;
+  }
+
+  .center {
+    margin-left: 35px;
+  }
+
+  tr,
+  td {
+    text-align: justify;
+    color: var(--textcolor);
+    font-size: 1.1em;
+    padding: 10px;
+    margin-left: 50px;
+  }
+
+  .copy-rights {
+    top: 870px;
+  }
+}

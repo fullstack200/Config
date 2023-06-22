@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link href="{% static './CSS/view.css' %}" rel="stylesheet">
+  <script>
+    function addToFav() {
+      if (document.getElementById("star2").style.color == "white") {
+        document.getElementById("star2").style = "color:yellow;";
+        document.getElementById("tooltiptext").innerHTML = "Remove from favourites";
+        var cls = document.getElementById("star2").className;
+        cls = cls.slice(0, 12);
+        document.getElementById("star2").className = cls + " add";
+        console.log(document.getElementById("star2").className);
+      }
+      else if (document.getElementById("star2").style.color == "yellow") {
+        document.getElementById("star2").style = "color:white;";
+        document.getElementById("tooltiptext").innerHTML = "Add to favourites";
+        var cls = document.getElementById("star2").className;
+        cls = cls.slice(0, 12);
+        document.getElementById("star2").className = cls + " rem";
+        console.log(document.getElementById("star2").className);
+      }
+    }
+  </script>
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body id="fullbody">
+  <!----Filter option---------------------------------------------------------------------------------------------------------------------->
+  <div id="filter" class="filter-dialog">
+    <div class="filter-menu animate-out">
+      <h1 style="text-align:center;font-weight:800;margin-bottom:20px;">FILTER BY</h1>
+      <a href="javascript:void(0)" onclick="closefilter()">×</a>
+      <div id="brand" class="sub-div">
+        <h3>Brand</h3>
+        <table>
+          <tr>
+            <td style="width:10%"><input type="checkbox" id="apple" name="apple" value="apple"></td>
+            <td><label for="apple">Apple</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="hp" name="hp" value="hp"></td>
+            <td><label for="hp">HP</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="dell" name="dell" value="dell"></td>
+            <td><label for="dell">Dell</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="asus" name="asus" value="asus"></td>
+            <td><label for="asus">Asus</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="lg" name="lg" value="lg"></td>
+            <td><label for="lg">LG</label><br></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="samsung" name="samsung" value="samsung"></td>
+            <td><label for="samsung">Samsung</label></td>
+          </tr>
+        </table>
+      </div>
+      <div class="sub-div">
+        <h3>Price</h3>
+        <table>
+          <tr>
+            <td style="width:10%"><input type="checkbox" id="price1" name="price1" value=""></td>
+            <td><label for="price1">&#8377; 40,000 - &#8377; 50,000</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="price2" name="price2" value=""></td>
+            <td><label for="price2">&#8377; 50,000 - &#8377; 60,000</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="price3" name="price3" value=""></td>
+            <td><label for="price3">&#8377; 60,000 - &#8377; 70,000</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="price4" name="price4" value=""></td>
+            <td><label for="price4">&#8377; 70,000 - &#8377; 80,000</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="price5" name="price5" value=""></td>
+            <td><label for="price5">&#8377; 80,000 - &#8377; 90,000</label><br></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="price6" name="price6" value=""></td>
+            <td><label for="price6">Above &#8377; 90,000</label></td>
+          </tr>
+        </table>
+      </div>
+      <div class="sub-div">
+        <h3>Processor</h3>
+        <table>
+          <tr>
+            <td style="width:10%"><input type="checkbox" id="i3" name="i3" value="i3"></td>
+            <td><label for="i3">core i3</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="i5" name="i5" value="i5"></td>
+            <td><label for="i5">core i5</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="i7" name="i7" value="i7"></td>
+            <td><label for="i7">core i7</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="i9" name="i9" value="i9"></td>
+            <td><label for="i9">core i9</label></td>
+          </tr>
+        </table>
+      </div>
+      <div class="sub-div" style="margin-left:33px;">
+        <h3>RAM Capacity</h3>
+        <table>
+          <tr>
+            <td style="width:10%"><input type="checkbox" id="4gb" name="4gb" value="4gb"></td>
+            <td><label for="4gb">4 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="8gb" name="8gb" value="8gb"></td>
+            <td><label for="8gb">8 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="12gb" name="12gb" value="12gb"></td>
+            <td><label for="12gb">12 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="16gb" name="16gb" value="16gb"></td>
+            <td><label for="16gb">16 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="lg" name="32gb" value="32gb"></td>
+            <td><label for="32gb">32 GB</label><br></td>
+          </tr>
+        </table>
+      </div>
+      <div class="sub-div">
+        <h3>Storage Capacity</h3>
+        <table>
+          <tr>
+            <td style="width:10%"><input type="checkbox" id="256gb" name="256gb" value="256gb"></td>
+            <td><label for="256gb">256 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="512gb" name="512gb" value="512gb"></td>
+            <td><label for="512gb">512 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="1tb" name="1tb" value="1tb"></td>
+            <td><label for="1tb">1 TB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="2tb" name="2tb" value="2tb"></td>
+            <td><label for="2tb">2 TB</label></td>
+          </tr>
+
+        </table>
+      </div>
+      <div class="sub-div">
+        <h3>Graphics Card</h3>
+        <table>
+          <tr>
+            <td style="width:10%"><input type="checkbox" id="integrated" name="integrated" value="integrated">
+            </td>
+            <td><label for="integrated">Integrated Graphics Card</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="g2gb" name="g2gb" value="g2gb"></td>
+            <td><label for="g2gb">2 GB</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="g4gb" name="g4gb" value="g4gb"></td>
+            <td><label for="g4gb">4 GB</label></td>
+          </tr>
+        </table>
+      </div>
+      <button type="button" class="btn btn-primary submit">Submit</button>
+    </div>
+  </div>
+  <!----Single Image Display section------------------------------------------------------------------------------------------------------------------------------------>
+  <section>
+    <div id="slide-container">
+      <div class="slides">
+        <img src="{{ laptop.img1.url }}">
+      </div>
+    </div>
+    
+    <div class="tooltip-fav">
+      {% if favlaptop %}
+      <a href="{% url 'favourites' laptop.id %}"><i class="fas fa-star" id="star2" style='color:yellow' onclick="addToFav()"></i></a>
+      <span class="tooltiptext" id="tooltiptext">Remove from favourites</span>
+      {% else %}
+      <a href="{% url 'favourites' laptop.id %}"><i class="fas fa-star" id="star2" onclick="addToFav()" style="color:white;"></i></a>
+      <span class="tooltiptext" id="tooltiptext">Add to favourites</span>
+      {% endif %}
+    </div>
+
+    <div class="tooltip-fil">
+      <i onclick="openfilter()" class="fas fa-filter filter"></i>
+      <span class="tooltiptext" id="tooltiptext">Filter</span>
+    </div>
+
+    <div class="tooltip-img">
+      <i onclick="openimgs()" class="fas fa-images more"></i>
+      <span class="tooltiptext" id="tooltiptext">View more images</span>
+    </div>
+
+    <!-----More images section------------------------------------------------------------------------------------------------>
+
+    <div id="images" class="filter-dialog">
+      <div class="images-menu animate-out">
+        <a href="javascript:void(0)" onclick="closeimgs()">×</a>
+        <div class="display-img">
+          <img id="img1" src="{{ laptop.img1.url }}">
+          <img id="img2" src="{{ laptop.img2.url }}">
+          <img id="img3" src="{{ laptop.img3.url }}">
+          <img id="img4" src="{{ laptop.img4.url }}">
+          <img id="img5" src="{{ laptop.img5.url }}">
+          <img id="img6" src="{{ laptop.img6.url }}">
+        </div>
+      </div>
+    </div>
+
+    <!--Multiple Images Display section------------------------------------------------------------------------------------------------------->
+    <div class="multi-imgs" id="multi-imgs">
+      {% for i in stud %}
+      <a href="{% url 'studView' i.id %}"><img class="demo" id="demo" src="{{ i.img1.url }}"  onclick="currentSlide(1)"></a>
+      {% endfor %}
+    </div>
+
+    <div id="more" class="arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!--Information section------------------------------------------------------------------------------------------------------------------->
+    <div class="info">
+      <h5 style="text-align:center;"><span
+          class="name">{{laptop.brand}}&nbsp;{{laptop.model}}</span></h5><br><br>
+      <div class="info1">
+        <h4>General Info</h4>
+        <table style="width:320px">
+          <tr>
+            <ul>
+              <td style="width:150px">
+                <li><img src="{% static 'media\brand-image.png' %}"> Brand :</li>
+              </td>
+              <td>{{laptop.brand}}</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\laptop.png' %}"> Model :</li>
+            </td>
+            <td>{{laptop.model}}</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\price-tag.png' %}"> Price :</li>
+            </td>
+            <td>{{laptop.price}}</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\weight.png' %}"> Weigh :</li>
+            </td>
+            <td>{{laptop.weight}} KG</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\maximize.png' %}"> Size :</li>
+            </td>
+            <td>{{laptop.size}} inch</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\coloring-tool.png' %}"> Color :</li>
+            </td>
+            <td>{{laptop.color}}</td>
+            </ul>
+          </tr>
+        </table>
+      </div>
+      <div class="info1">
+        <h4>Hardware Info</h4>
+        <table style="width:400px">
+          <tr>
+            <td style="width:210px">
+              <li><img src="{% static 'media\cpu.png' %}"> Processor :</li>
+            </td>
+            <td>{{laptop.processorModel}}</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\ram.png' %}"> RAM:</li>
+            </td>
+            <td>{{laptop.ram}} GB</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\hdd.png' %}"> Storage :</li>
+            </td>
+            <td>{{laptop.storageMemory}} {{laptop.storageType}}</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\battery.png' %}"> Battery life :</li>
+            </td>
+            <td>Upto {{laptop.batteryLife}} hours</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\graphic-card.png' %}"> Graphics :</li>
+            </td>
+            <td>{{laptop.graphicsCardModel}} {{laptop.graphicsMemory}} GB</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\monitor.png' %}"> Screen Quality: </span></li>
+            </td>
+            <td>{{laptop.screenQuality}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="info1">
+        <h4>Software Info</h4>
+        <table>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\operating-system.png' %}"> OS :</li>
+            </td>
+            <td>{{laptop.os}}</td>
+          </tr>
+          <tr>
+            <td>
+              <li><img src="{% static 'media\office.png' %}"><span style="margin-bottom:60px;"> Office :</span></li>
+            </td>
+            <td>{{laptop.office}}</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="xinfo">
+        <h4>Extra Info <img style="width:30px; height:30px" src="{% static 'media\info.png' %}"></h4>
+        <ul>
+          {% for x in laptop.splitx %}
+          <li>{{x}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="pros-cons">
+        <h4>Pros <img src="{% static 'media\happiness (1).png' %}"></h4>
+        <ul>
+          {% for x in laptop.splitp %}
+          <li>{{x}}</li>
+          {% endfor %}
+        </ul>
+        <h4>Cons <img src="{% static 'media\sad.png' %}"></h4>
+        <ul>
+          {% for x in laptop.splitc %}
+          <li>{{x}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="links">
+        <h4>Links&nbsp;</h4>
+        <h6>&nbsp;&nbsp;(Prices are subjected to offers.)</h6>
+        <ul>
+          <li><img src="{% static 'media\amazon-a-logo-icon.png' %}"></li>
+          <a id="amazon" href="{{laptop.amazonLink}}">Amazon</a>
+          <li><img src="{% static 'media\flipkart-icon.png' %}"></li>
+          <a id="flipkart" href="{{laptop.flipkartLink}}">Flipkart</a>
+        </ul>
+      </div>
+    
+  </section>
+
+  <!--------------------------------------------------------------------------------------------------------------------------------------->
+  <script>
+    /************Image sliding*****************************************************************************************************************/
+
+    /*let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      let slides1 = document.getElementsByClassName("demo");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides1[i].style = "opacity:0.6";
+      }
+      slides[slideIndex - 1].style.display = "block";
+      slides1[slideIndex - 1].style = "opacity:1; box-shadow: 4px 4px 8px 0 #1E90FF, 4px 6px 20px 0 #1E90FF;";
+    }
+    /*********************************************************************************************************************************/
+
+    function slide(n) {
+      const i = document.getElementById("multi-imgs");
+      i.scrollLeft += n;
+    }
+
+    /*******Scrolling automatically when images are slided***************************************************************************/
+
+    function slide(n) {
+      const i = document.getElementById("multi-imgs");
+      let slides1 = document.getElementsByClassName("demo");
+      console.log(slideIndex);
+      if (slideIndex == slides1.length) {
+        i.scrollLeft = i.scrollWidth;
+      }
+      else if (slideIndex == 1) {
+        i.scrollLeft = 0;
+      }
+      else {
+        i.scrollLeft += n;
+      }
+    }
+
+    /**************Centering the images when image count is less than 10**********************************************************************/
+
+    if (document.getElementsByClassName("demo").length < 11) {
+      document.getElementById("more").style.display = "none";
+      document.getElementById("multi-imgs").style = "justify-content:center;align-items:center";
+    }
+
+    /*************To get the scroll end value and remove the indicators************************************************************************/
+
+    const scrollDemo = document.querySelector("#multi-imgs");
+
+    function scrollview() {
+      if (scrollDemo.scrollLeft == (scrollDemo.scrollWidth - scrollDemo.clientWidth)) {
+        document.getElementById('more').style.display = "none";
+      }
+      else if (scrollDemo.scrollLeft < (scrollDemo.scrollWidth - scrollDemo.clientWidth)) {
+        document.getElementById('more').style.display = "block";
+      }
+    }
+
+    document.getElementById("multi-imgs").addEventListener("scroll", scrollview);
+
+    /**************Opening Filter by menu***********************************************************************************************************************/
+    function openfilter() {
+      document.getElementById("filter").style.display = "block";
+    }
+    function closefilter() {
+      document.getElementById("filter").style.display = "none";
+    }
+
+    /**************Opening Filter by menu***********************************************************************************************************************/
+    function openimgs() {
+      document.getElementById("images").style.display = "block";
+    }
+    function closeimgs() {
+      document.getElementById("images").style.display = "none";
+    }
+
+    /************************************************************************************************************************************************************/
+  </script>
+</body>
+{% endblock content %}
+
+</html>

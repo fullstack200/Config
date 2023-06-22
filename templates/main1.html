@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link rel="stylesheet" href="{% static './CSS/style1.css' %}">
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body>
+  <section class="imgs">
+    <div>
+      <img src="{% static './media/1_2db8F59LEiO6VfX0fJDpgA.jpeg' %}" style="float:left" alt="">
+      <a href="{% url 'typpro' %}">
+        <div class="right-side">
+          <h1 id="h1pro">For Programmers</h1>
+        </div>
+      </a>
+
+    </div>
+    <div>
+      <img src="{% static './media/6a019b00aa8013970c026be417fde6200d-800wi.jpg' %}" style="float:right" alt="">
+      <a href="{% url 'typbus' %}">
+        <div class="left-side">
+          <h1 id="h1bus">For Business Professionals</h1>
+        </div>
+      </a>
+    </div>
+    <div>
+      <img src="{% static './media/best-hp-gaming-laptops-for-any-budget-hero1531871685786.jpg' %}" style="float:left"
+        alt="">
+      <a href="{% url 'typgame' %}">
+        <div class="right-side">
+          <h1 id="h1gam">For Gamers</h1>
+        </div>
+      </a>
+    </div>
+    <div>
+      <img src="{% static './media/Best-Laptops-for-Artists-1024x683.jpg' %}" style="float:right" alt="">
+      <a href="{% url 'typgph' %}">
+        <div class="left-side">
+          <h1 id="h1art">For Designers</h1>
+        </div>
+      </a>
+    </div>
+    </div>
+    <div>
+      <img src="{% static './media/Best-School-Laptop-2020-920x613.jpg' %}" style="float:left" alt="">
+      <a href="{% url 'typstud' %}">
+        <div class="right-side">
+          <h1 id="h1sch">For Students</h1>
+        </div>
+      </a>
+    </div>
+    </div>
+  </section>
+</body>
+{% endblock content %}
+
+</html>

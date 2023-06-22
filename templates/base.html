@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>CONFIG</title>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+
+  <!---Bootstrap link---->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Favicon link -->
+  <link rel="icon" href="{% static './media/favicon.ico' %}">
+
+  <!-- Font Awesome icons link -->
+  <script src="https://kit.fontawesome.com/562a44d30d.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet link -->
+  <link href="{% static './CSS/similar.css' %}" rel="stylesheet">
+  {% block extrahead %}{% endblock %}
+
+  <!-- Side panel -->
+  <script src="{% static './JS/sidebar.js' %}"></script>
+
+</head>
+
+<body>
+  <section>
+    <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </div>
+
+    <div id="myaccount" class="account">
+      <a style="color: #818181;" href="javascript:void(0)" class="closebtna" onclick="closeNava()">×</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}" style="color: #818181;" id="log">Logout</a>
+      <a href="{% url 'password_change' %}" style="color:#818181;">Change Password</a>
+      {% else %}
+      <a href="{% url 'login' %}" style="color: #818181;" id="log">Login</a>
+      {% endif %}
+      <a href="{% url 'signup' %}" style="color: #818181;" onclick="open()">Signup</a>
+    </div>
+
+    <div class="horizontal-menu">
+      <i class="fa-solid fa-bars openbtn" id="sidebar" onclick="openNav()"></i>
+      <a href="{% url 'home' %}"><img id="logo" src="{% static './media/CONFIGURE.png' %}" alt=""></a>
+      <form method="GET" action="{% url 'search_result' %}">
+        <input type="text" name="searchlaptop" id="searchbox" placeholder=" Search Laptops...">
+        <i id="search" class="fa-solid fa-magnifying-glass"></i>
+      </form>
+      {% if user.is_authenticated %}
+      <h6>Hi, {{ user.username }}</h6>
+      {% else %}
+      <p style=" margin-right: 55px;">Login to continue</p>
+      {% endif %}
+
+      <a href="{% url 'favouritesView' %}"><i id="star" class="fas fa-star"></i></a>
+      <i class="fa-solid fa-user openbtn" id="user" onclick="openNava()"></i>
+    </div>
+  </section>
+
+  {% block content %}
+  {% endblock content %}
+
+  <section>
+    <div class="copy-rights">
+      <p>&copy; 2023 Fahad Ahmed.</p>
+    </div>
+  </section>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
+<!---------------------------------------------------------------------------------------------------------------------------------------->

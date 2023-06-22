@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+<head>
+  {% block extrahead %}
+  <!-- External stylesheet link -->
+  <link href="{% static './CSS/home_page.css' %}" rel="stylesheet">
+  {% endblock %}
+</head>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+{% block content %}
+
+<body>
+  <section>
+    <div class="main-content">
+      <video autoplay muted loop id="myVideo">
+        <source src="{% static './media/Final BG Video.mp4' %}" type="video/mp4">
+      </video>
+      <h1 class="one-liner">KNOW THE CONFIGURATION YOU NEED.</h1>
+      <a href="{% url 'category' %}"><button type="button" class="explore"><span>Explore</span></button></a>
+      </button>
+    </div>
+  </section>
+
+  <!---------------------------------------------------------------------------------------------------------------------------------------->
+  <section>
+    <div class="footer">
+      <h1 id="sample">CONFIG</h1><br>
+      <p>CONFIG is a website which helps you to find the laptop with perfect configuration best suited for your
+        needs.<br>
+        Find yours now!
+      </p>
+    </div>
+  </section>
+</body>
+{% endblock content %}
+
+</html>

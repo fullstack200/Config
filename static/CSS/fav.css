@@ -1,0 +1,125 @@
+:root {
+  --bgcolor: #1E90FF;
+  --bgcolor2: rgb(0, 15, 18);
+  --color: white;
+}
+
+body {
+  height: 100%;
+  background-color: var(--bgcolor2);
+  position: relative;
+}
+
+.favourites {
+  height: 340px;
+  width: 200px;
+  background-color: var(--bgcolor);
+  color: var(--textcolor);
+  text-align: center;
+  font-size: 10px;
+  margin: 25px 25px 25px 25px;
+  cursor: pointer;
+}
+
+.favourites:hover {
+  box-shadow: 0 4px 8px 0 var(--bgcolor), 0 6px 20px 0 var(--bgcolor);
+}
+
+.favorites {
+  margin:20px 0 0 0 ;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.favorites a {
+  color:white;
+  text-decoration: none;
+}
+
+#emp{
+  display:none;
+  color:var(--textcolor);
+  font-weight: 800;
+  text-align: center;
+  margin: 170px auto 78px auto;
+}
+
+.favorites h4 {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.favorites p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.favorites button {
+  height: 25px;
+  width: 75px;
+  color: var(--bgcolor);
+  font-size: 5px;
+  margin-top: 5px;
+  padding: 0;
+  border: none;
+  font-size: 5px;
+}
+
+.favorites img {
+  width: 200px;
+  height: 200px;
+}
+
+.favorites i {
+  margin-top: 10px;
+  font-size: 20px;
+  color:white;
+}
+
+.copy-rights {
+  position: relative;
+  top:63px;
+}
+
+/******Mobile screen**************************************************************************************************/
+@media screen and (max-width:480px) {
+
+  .rows {
+    display: inline-block;
+  }
+
+  .favorites img {
+    width: 200px;
+    height: 200px;
+  }
+
+  #emp{
+    margin:240px auto 340px auto;
+    padding:5px;
+  }
+
+  .favorites{
+    margin: 10px 0px 10px;
+  }
+
+  .favourites {
+    height: 360px;
+    width: 200px;
+    font-size: 15px;
+    margin: 30px 10px 20px 20px;
+  }
+
+  .favorites button {
+    height: 30px;
+    width: 80px;
+    color: var(--bgcolor);
+    margin-top: 15px;
+    font-size: 13px;
+    border: none;
+  }
+
+  .copy-rights {
+    top:370px;
+  }
+}
