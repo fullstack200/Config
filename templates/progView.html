@@ -43,7 +43,7 @@
           <h3>Brand</h3>
           <table>
             <tr>
-              <td style="width:10%"><input type="checkbox" id="apple" name="apple" value="apple"></td>
+              <td style="width:10%"><input type="checkbox" id="apple" name="pple" value="Apple"></td>
               <td><label for="apple">Apple</label></td>
             </tr>
             <tr>
@@ -183,7 +183,7 @@
             </tr>
           </table>
         </div>
-        <button type="button" class="btn btn-primary submit">Submit</button>
+        <button type="submit" class="btn btn-primary submit">Submit</button>
     </div>
   </div>
   </form>
@@ -231,20 +231,6 @@
           <img id="img6" src="{{ laptop.img6.url }}">
         </div>
       </div>
-    </div>
-
-    <!--Multiple Images Display section------------------------------------------------------------------------------------------------------->
-    <div class="multi-imgs" id="multi-imgs">
-      {% for i in prog %}
-      <a href="{% url 'progView' i.id %}"><img class="demo" id="demo" src="{{ i.img1.url }}"
-          onclick="currentSlide(1)"></a>
-      {% endfor %}
-    </div>
-
-    <div id="more" class="arrow">
-      <span></span>
-      <span></span>
-      <span></span>
     </div>
 
     <!--Information section------------------------------------------------------------------------------------------------------------------->

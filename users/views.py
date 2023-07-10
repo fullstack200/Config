@@ -52,4 +52,4 @@ class search(ListView):
         return Laptop.objects.filter(
             Q(model__icontains = query) | Q(brand__icontains = query)
             )
-            
+

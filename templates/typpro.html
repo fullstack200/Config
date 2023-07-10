@@ -34,9 +34,9 @@
     </p>
     {% for i in prog %}
     {% if forloop.first %}
-    <a href="{% url 'progView' i.id %}"><button type="button" class="explore"><span>Click to explore!
+    <a href="{% url 'progView' %}"><button type="button" class="explore"><span>Click to explore!
         </span></button></a>
-    {%endif%}
+    {% endif %}
     {% endfor %}
   </div>
 

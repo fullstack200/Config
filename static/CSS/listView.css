@@ -1,0 +1,260 @@
+:root {
+    --bgcolor: #1E90FF;
+    --bgcolor2: rgb(0, 15, 18);
+    --color: white;
+  }
+  
+  body {
+    height: 100%;
+    background-color: var(--bgcolor2);
+    position: relative;
+  }
+
+  .tooltip-fil {
+    position: relative;
+    top: 50px;
+    left: 1160px;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    color: white;
+  }
+  
+  .tooltip-fil .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    right: 40px;
+    font-size: 13px;
+  }
+  
+  .tooltip-fil .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--bgcolor);
+  }
+  
+  .tooltip-fil:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .filter-dialog::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .filter-dialog {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
+  
+  .filter-dialog::-web kit-scrollbar {
+    height: 0;
+  }
+  
+  .filter-menu {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    height: 850px;
+    width: 960px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 50px auto;
+  }
+  
+  .filter-menu h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 800;
+  }
+  
+  .filter-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+    cursor: pointer;
+    position: relative;
+    left: 890px;
+    bottom: 90px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .filter-menu a:hover {
+    color: red;
+  }
+  
+  .sub-div {
+    width: 280px;
+    height: 300px;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid white;
+  }
+  
+  .sub-div table {
+    width: 100%;
+  }
+  
+  .submit:hover {
+    background-color: var(--bgcolor);
+    border-color: var(--textcolor);
+  }
+  
+  .animate-out {
+    animation: animatezoomout 0.6s;
+  }
+  
+  @keyframes animatezoomout {
+    from {
+      transform: scale(0);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  .submit {
+    border: 2px solid white;
+    width: 200px;
+    position: absolute;
+    top: 850px;
+    left: 530px;
+    background-color: #1E90FF;
+  }
+  
+  
+  .favourites {
+    height: 340px;
+    width: 200px;
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    text-align: center;
+    font-size: 10px;
+    margin: 25px 25px 25px 25px;
+    cursor: pointer;
+  }
+  
+  .favourites:hover {
+    box-shadow: 0 4px 8px 0 var(--bgcolor), 0 6px 20px 0 var(--bgcolor);
+  }
+  
+  .favorites {
+    margin:20px 0 0 0 ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .favorites a {
+    color:white;
+    text-decoration: none;
+  }
+  
+  #emp{
+    display:none;
+    color:var(--textcolor);
+    font-weight: 800;
+    text-align: center;
+    margin: 170px auto 78px auto;
+  }
+  
+  .favorites h4 {
+    font-weight: bold;
+    padding-top: 10px;
+  }
+  
+  .favorites p {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  
+  .favorites button {
+    height: 25px;
+    width: 75px;
+    color: var(--bgcolor);
+    font-size: 5px;
+    margin-top: 5px;
+    padding: 0;
+    border: none;
+    font-size: 5px;
+  }
+  
+  .favorites img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .favorites i {
+    margin-top: 10px;
+    font-size: 20px;
+    color:white;
+  }
+  
+  .copy-rights {
+    position: relative;
+    top:63px;
+  }
+  
+  /******Mobile screen**************************************************************************************************/
+  @media screen and (max-width:480px) {
+  
+    .rows {
+      display: inline-block;
+    }
+  
+    .favorites img {
+      width: 200px;
+      height: 200px;
+    }
+  
+    #emp{
+      margin:240px auto 340px auto;
+      padding:5px;
+    }
+  
+    .favorites{
+      margin: 10px 0px 10px;
+    }
+  
+    .favourites {
+      height: 360px;
+      width: 200px;
+      font-size: 15px;
+      margin: 30px 10px 20px 20px;
+    }
+  
+    .favorites button {
+      height: 30px;
+      width: 80px;
+      color: var(--bgcolor);
+      margin-top: 15px;
+      font-size: 13px;
+      border: none;
+    }
+  
+    .copy-rights {
+      top:370px;
+    }
+  }
