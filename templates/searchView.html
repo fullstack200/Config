@@ -19,7 +19,7 @@
     <div class="favorites" id="favorites">
       {% for laptop in queryset %}
       {% if laptop.typ == "Programming" %}
-      <a href="{% url 'progView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
       <div id="fav1" class="favourites" id="fav1">
         <img src="{{ laptop.img1.url }}" alt="none">
         <h4>{{laptop.brand}}</h4>
@@ -27,10 +27,11 @@
         <p>{{laptop.model}}</p>
         <p>Rs. {{laptop.price}}</p>
         <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
-      </div>
+        </div></a>
+      
      
       {% elif laptop.typ == "Business" %}
-      <a href="{% url 'busnView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
       <div id="fav1" class="favourites" id="fav1">
         <img src="{{ laptop.img1.url }}" alt="none">
         <h4>{{laptop.brand}}</h4>
@@ -41,7 +42,7 @@
       </div>
      
       {% elif laptop.typ == "Gaming" %}
-      <a href="{% url 'gameView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
       <div id="fav1" class="favourites" id="fav1">
         <img src="{{ laptop.img1.url }}" alt="none">
         <h4>{{laptop.brand}}</h4>
@@ -52,7 +53,7 @@
       </div>
 
       {% elif laptop.typ == "Designing" %}
-      <a href="{% url 'gphView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
       <div id="fav1" class="favourites" id="fav1">
         <img src="{{ laptop.img1.url }}" alt="none">
         <h4>{{laptop.brand}}</h4>
@@ -63,7 +64,7 @@
       </div>
 
       {% elif laptop.typ == "Student" %}
-      <a href="{% url 'studView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
       <div id="fav1" class="favourites" id="fav1">
         <img src="{{ laptop.img1.url }}" alt="none">
         <h4>{{laptop.brand}}</h4>

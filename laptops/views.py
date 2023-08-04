@@ -66,8 +66,11 @@ def laptopView(request, id):
         template = loader.get_template('gphView.html')
     if laptop.typ == "Student":
         template = loader.get_template('studView.html')
+    
+    favlaptop = Laptop.objects.filter(user_favourite=request.user, id=laptop.id)
     context = {
         'laptop':laptop,
+        'favlaptop':favlaptop,
     }
     return HttpResponse(template.render(context, request))
 
@@ -76,8 +79,7 @@ def is_valid_queryparam(param):
 
 def filterProg(request):
     laptops = Laptop.objects.filter(typ='Programming')
-    var = 0
-    
+        
     #Brands
     brand1 = request.GET.get('apple')
     brand2 = request.GET.get('hp')
@@ -118,71 +120,7 @@ def filterProg(request):
     graphics2 = request.GET.get('graphics2')
     graphics3 = request.GET.get('graphics3')
 
-    filteredList= []
-    if request.GET:
-        var = 1
-        if is_valid_queryparam(brand1):
-            a = laptops.filter(brand__icontains=brand1)   
-            if a not in filteredList:
-                filteredList += a
-            else:
-                pass
-            
-        if is_valid_queryparam(brand2):
-            b = laptops.filter(brand__icontains=brand2)   
-            filteredList += b
-            
-        if is_valid_queryparam(brand3):
-            c = laptops.filter(brand__icontains=brand3)
-            filteredList += c
-            
-        if is_valid_queryparam(brand4):
-            d = laptops.filter(brand__icontains=brand4)   
-            filteredList += d
-
-        if is_valid_queryparam(brand5):
-            e = laptops.filter(brand__icontains=brand5)   
-            filteredList += e
-        
-        if is_valid_queryparam(brand6):
-            f = laptops.filter(brand__icontains=brand6)   
-            filteredList += f
-        
-        if is_valid_queryparam(price1):
-            g = laptops.filter(price__gt=40000) and laptops.filter(price__lt=50000)
-            filteredList += g
-            
-        if is_valid_queryparam(price2):
-            h = laptops.filter(price__gt=50000) and laptops.filter(price__lt=60000)
-            filteredList += h
-
-        if is_valid_queryparam(price3):
-            i = laptops.filter(price__gt=60000) and laptops.filter(price__lt=70000)
-            filteredList += i
-
-        if is_valid_queryparam(price4):
-            j = laptops.filter(price__gt=70000) and laptops.filter(price__lt=80000)
-            filteredList += j
-
-        if is_valid_queryparam(price5):
-            k = laptops.filter(price__gt=80000) and laptops.filter(price__lt=90000)
-            filteredList += k
-
-        if is_valid_queryparam(price6):
-            l = laptops.filter(price__gt=90000) 
-            filteredList += l
-
-    if filteredList != []:  
-        laptops = filteredList
-    
-    elif filteredList == [] and var == 1:
-        context = {
-            'nofilter':filteredList
-        }
-        return render(request,'typprolist.html',context)
-    
     context = {
     'prog':laptops,
     }
     return render(request,'typprolist.html',context)
-

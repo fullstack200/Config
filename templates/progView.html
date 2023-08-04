@@ -10,16 +10,12 @@
   <script>
     function addToFav() {
       if (document.getElementById("star2").style.color == "white") {
-        document.getElementById("star2").style = "color:yellow;";
-        document.getElementById("tooltiptext").innerHTML = "Remove from favourites";
         var cls = document.getElementById("star2").className;
         cls = cls.slice(0, 12);
         document.getElementById("star2").className = cls + " add";
         console.log(document.getElementById("star2").className);
       }
       else if (document.getElementById("star2").style.color == "yellow") {
-        document.getElementById("star2").style = "color:white;";
-        document.getElementById("tooltiptext").innerHTML = "Add to favourites";
         var cls = document.getElementById("star2").className;
         cls = cls.slice(0, 12);
         document.getElementById("star2").className = cls + " rem";

@@ -16,6 +16,7 @@
   <!----------------------------------------------------------------------------------------------------------------------------------------->
   <section>
     <div class="favorites" id="favorites">
+      {% if list %}
       {% for laptop in list %}
       {% if laptop.typ == "Programming" %}
       <a href="{% url 'laptopView' laptop.id %}">
@@ -27,58 +28,56 @@
           <p>Rs. {{laptop.price}}</p>
           <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
         </div>
-
-        {% elif laptop.typ == "Business" %}
-        <a href="{% url 'busnView' laptop.id %}">
-          <div id="fav1" class="favourites" id="fav1">
-            <img src="{{ laptop.img1.url }}" alt="none">
-            <h4>{{laptop.brand}}</h4>
-            <p>For {{laptop.typ}}</p>
-            <p>{{laptop.model}}</p>
-            <p>Rs. {{laptop.price}}</p>
-            <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
-          </div>
-
-          {% elif laptop.typ == "Gaming" %}
-          <a href="{% url 'gameView' laptop.id %}">
-            <div id="fav1" class="favourites" id="fav1">
-              <img src="{{ laptop.img1.url }}" alt="none">
-              <h4>{{laptop.brand}}</h4>
-              <p>For {{laptop.typ}}</p>
-              <p>{{laptop.model}}</p>
-              <p>Rs. {{laptop.price}}</p>
-              <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
-            </div>
-
-            {% elif laptop.typ == "Designing" %}
-            <a href="{% url 'gphView' laptop.id %}">
-              <div id="fav1" class="favourites" id="fav1">
-                <img src="{{ laptop.img1.url }}" alt="none">
-                <h4>{{laptop.brand}}</h4>
-                <p>For {{laptop.typ}}</p>
-                <p>{{laptop.model}}</p>
-                <p>Rs. {{laptop.price}}</p>
-                <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
-              </div>
-
-              {% elif laptop.typ == "Student" %}
-              <a href="{% url 'studView' laptop.id %}">
-                <div id="fav1" class="favourites" id="fav1">
-                  <img src="{{ laptop.img1.url }}" alt="none">
-                  <h4>{{laptop.brand}}</h4>
-                  <p>For {{laptop.typ}}</p>
-                  <p>{{laptop.model}}</p>
-                  <p>Rs. {{laptop.price}}</p>
-                  <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
-                </div>
-                {% endif %}
-                {% empty %}
-                <div id="emp">
-                  <h1>Your favourites section is empty....<br><img src="media\Icons\box.png" alt=""
-                      style="height:50px;width:50px;"><br>Add to view</h1>
-                </div>
-                {% endfor %}
-              </a>
+      </a>
+      {% elif laptop.typ == "Business" %}
+      <a href="{% url 'busnView' laptop.id %}">
+        <div id="fav1" class="favourites" id="fav1">
+          <img src="{{ laptop.img1.url }}" alt="none">
+          <h4>{{laptop.brand}}</h4>
+          <p>For {{laptop.typ}}</p>
+          <p>{{laptop.model}}</p>
+          <p>Rs. {{laptop.price}}</p>
+          <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+      </a>
+      {% elif laptop.typ == "Gaming" %}
+      <a href="{% url 'gameView' laptop.id %}">
+        <div id="fav1" class="favourites" id="fav1">
+          <img src="{{ laptop.img1.url }}" alt="none">
+          <h4>{{laptop.brand}}</h4>
+          <p>For {{laptop.typ}}</p>
+          <p>{{laptop.model}}</p>
+          <p>Rs. {{laptop.price}}</p>
+          <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+      </a>
+      {% elif laptop.typ == "Designing" %}
+      <a href="{% url 'gphView' laptop.id %}">
+        <div id="fav1" class="favourites" id="fav1">
+          <img src="{{ laptop.img1.url }}" alt="none">
+          <h4>{{laptop.brand}}</h4>
+          <p>For {{laptop.typ}}</p>
+          <p>{{laptop.model}}</p>
+          <p>Rs. {{laptop.price}}</p>
+          <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+      </a>
+      {% elif laptop.typ == "Student" %}
+      <a href="{% url 'studView' laptop.id %}">
+        <div id="fav1" class="favourites" id="fav1">
+          <img src="{{ laptop.img1.url }}" alt="none">
+          <h4>{{laptop.brand}}</h4>
+          <p>For {{laptop.typ}}</p>
+          <p>{{laptop.model}}</p>
+          <p>Rs. {{laptop.price}}</p>
+          <a href="{% url 'favourites' laptop.id %}"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </a>
+      {% else %}
+      <p style="color:white">Your fav list is empty</p>
+      {% endif %}
 
 
     </div>
