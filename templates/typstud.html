@@ -29,7 +29,7 @@
     </p>
     {% for i in stud %}
     {% if forloop.first %}
-    <a href="{% url 'studView' i.id %}"><button type="button" class="explore"><span>Click to explore!
+    <a href="{% url 'studView' %}"><button type="button" class="explore"><span>Click to explore!
         </span></button></a>
     {%endif%}
     {% endfor %}

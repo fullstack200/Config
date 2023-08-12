@@ -189,7 +189,7 @@
             </a>
             {% endfor %}
             {% else %}
-            {% for laptop in prog %}
+            {% for laptop in desg %}
             <a href="{% url 'laptopView' laptop.id %}">
                 <div id="fav1" class="favourites" id="fav1">
                     <img src="{{ laptop.img1.url }}" alt="none">

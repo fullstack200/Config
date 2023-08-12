@@ -30,7 +30,7 @@
         </div>
       </a>
       {% elif laptop.typ == "Business" %}
-      <a href="{% url 'busnView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
         <div id="fav1" class="favourites" id="fav1">
           <img src="{{ laptop.img1.url }}" alt="none">
           <h4>{{laptop.brand}}</h4>
@@ -41,7 +41,7 @@
         </div>
       </a>
       {% elif laptop.typ == "Gaming" %}
-      <a href="{% url 'gameView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
         <div id="fav1" class="favourites" id="fav1">
           <img src="{{ laptop.img1.url }}" alt="none">
           <h4>{{laptop.brand}}</h4>
@@ -52,7 +52,7 @@
         </div>
       </a>
       {% elif laptop.typ == "Designing" %}
-      <a href="{% url 'gphView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
         <div id="fav1" class="favourites" id="fav1">
           <img src="{{ laptop.img1.url }}" alt="none">
           <h4>{{laptop.brand}}</h4>
@@ -63,7 +63,7 @@
         </div>
       </a>
       {% elif laptop.typ == "Student" %}
-      <a href="{% url 'studView' laptop.id %}">
+      <a href="{% url 'laptopView' laptop.id %}">
         <div id="fav1" class="favourites" id="fav1">
           <img src="{{ laptop.img1.url }}" alt="none">
           <h4>{{laptop.brand}}</h4>
